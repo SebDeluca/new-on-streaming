@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/reloader"
+require "sinatra/reloader" if development?
 require "tilt/erubis"
 
 SHOWS = ["Creative Galaxy Heart Day Special (February 7)",
