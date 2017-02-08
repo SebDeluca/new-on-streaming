@@ -64,12 +64,8 @@ get "/" do
 end
 
 post "/signup" do
-  email = params[:email]
 
-  Pony.mail :to => email,
-            :from => "sd@distribute.com",
-            :subject => "Test Email Subject",
-            :body => "Test Email Body"
+  Pony.mail(:to => params[:email], :from => "sd@distribute.com", :subject => "Test Email Subject", :body => "Test Email Body")
 
   redirect "/"
 end
