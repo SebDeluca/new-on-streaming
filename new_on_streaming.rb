@@ -1,6 +1,7 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 require "tilt/erubis"
+require "twilio-ruby"
 
 SHOWS = ["Creative Galaxy Heart Day Special (February 7)",
 "The Americans Season 4 (February 15)",
