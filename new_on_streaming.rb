@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "tilt/erubis"
 require "twilio-ruby"
+require "pony"
 
 SHOWS = ["Creative Galaxy Heart Day Special (February 7)",
 "The Americans Season 4 (February 15)",
@@ -60,4 +61,15 @@ get "/" do
 
 
   erb :main
+end
+
+post "/signup" do
+  email = params[:email]
+
+  Pony.mail :to => email,
+            :from => "sd@distribute.com",
+            :subject => "Test Email Subject",
+            :body => "Test Email Body"
+
+  redirect "/"
 end
