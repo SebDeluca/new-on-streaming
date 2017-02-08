@@ -57,7 +57,7 @@ MOVIES= ["The Care Bears Movie (February 1)",
 "Captain Fantastic (February 27)",
 "Havana Motor Club (February 27)"]
 
-post "/signup" do
+post "/" do
 
   Pony.mail(:to => params[:email], :from => "sd@distribute.com", :subject => "Test Email Subject", :body => "Test Email Body")
 
